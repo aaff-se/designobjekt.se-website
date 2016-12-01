@@ -1,7 +1,7 @@
 # designobjekt.se website
 
 ## About
-This is the WordPress theme running on [designobjekt.se][1]. Created as a side project by [AAFF][2] and [1910][3] - the site works as a one page link repository, with automatic item positioning depending on image ratio. Apart from the regular WordPress extensions, there is a lot going on in the JS in regards to transitions and image resizing. Just dive in and take a look.
+This is the WordPress theme running on [designobjekt.se][1]. Created as a side project by [AAFF][2] and [1910][3] - the site works as a one page link repository with automatic content loading, and automatic content positioning depending on image ratio. Apart from the regular WordPress extensions, there is a lot going on in the JS in regards to transitions and image resizing. Just dive in and take a look.
 
 Everything is bundled with grunt, even the theme php files, in order to keep the src and dist folders separate.
 

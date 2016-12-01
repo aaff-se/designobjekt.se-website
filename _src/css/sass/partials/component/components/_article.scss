@@ -145,7 +145,7 @@ article a:hover .media,
 article:hover .media,
 article a:active .media,
 article a:focus .media {
-	@include opacity(0.75);
+	@include opacity(0.7);
 	@include transition(opacity 1500ms $special_easing, background 300ms $ease-out, transform 1500ms $special_easing);
 }
 
