@@ -121,10 +121,23 @@ footer .social a {
 	color: $color_dark_grey_social;
 	@include transition( color 800ms $ease-out);
 	text-decoration: none;
-	width: 1.5em;
+	width: 2.5em;
+	margin-right: 1em;
 	display: block;
 	float:left;
-	margin-right: .75em;
+	@media all and (min-width: $xsmall){
+		width: 1.75em;
+	}
+	@media all and (orientation: landscape){
+		width: 1.75em;
+	}
+	@media all and (orientation: landscape) and (min-width: $small) {
+		width: 1.5em;
+	}
+	@media all and (min-width: $small){
+		width: 1.5em;
+	}
+
 }
 
 footer .social a:hover {

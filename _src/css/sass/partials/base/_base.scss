@@ -52,6 +52,9 @@ body {
 	-webkit-tap-highlight-color: rgba(0,0,0,0) !important;
 	@include transition(opacity 200ms $ease-out);
 	
+	@media all and (orientation: landscape){
+		font-size: $calc_font_size;
+	}
 	@media all and (min-width: $small){
 		font-size: $calc_font_size;
 	}
