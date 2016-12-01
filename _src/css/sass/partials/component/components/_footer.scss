@@ -205,7 +205,7 @@ body.menu article.below .media {
 
 #loader .loadercircle {
     stroke: $color_body;
-    stroke-width: $calc_stroke_width_xsmall;
+    stroke-width: $calc_stroke_width_small_half;
     stroke-miterlimit:10;
     @include transition(all 0 ease-in-out);
     stroke-dasharray: 0, 114.668;
@@ -213,16 +213,16 @@ body.menu article.below .media {
 	fill:none;
 
 	@media all and (min-width: $xsmall){
-	    stroke-width: $calc_stroke_width_small;
+	    stroke-width: $calc_stroke_width_small_half;
 	}
 	@media all and (orientation: landscape){
-	    stroke-width: $calc_stroke_width_small;
+	    stroke-width: $calc_stroke_width_small_half;
 	}
 	@media all and (orientation: landscape) and (min-width: $small) {
-	    stroke-width: $calc_stroke_width;
+	    stroke-width: $calc_stroke_width_half;
 	}
 	@media all and (min-width: $small){
-	    stroke-width: $calc_stroke_width;
+	    stroke-width: $calc_stroke_width_half;
 	}
 
 }
@@ -241,7 +241,7 @@ body.menu article.below .media {
 
 #loader .back-to-top {
 	stroke:$color_body;
-	stroke-width: $calc_stroke_width;
+	stroke-width: $calc_stroke_width_small;
 	stroke-miterlimit:10;
 	fill:none;
 	display: none;
@@ -255,7 +255,7 @@ body.menu article.below .media {
 	    stroke-width: $calc_stroke_width;
 	}
 	@media all and (min-width: $small){
-	    stroke-width: $calc_stroke_width_large;
+	    stroke-width: $calc_stroke_width;
 	}
 
 }

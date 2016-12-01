@@ -38,18 +38,20 @@
 	color: $color_body;
 	fill:transparent;
 	stroke: $color_body;
-	stroke-width:$calc_stroke_width_xsmall;
+	stroke-width:$calc_stroke_width_small_half;
 	stroke-miterlimit:10;
+/*
 	@media all and (min-width: $xsmall){
 		stroke-width:$calc_stroke_width_small;
 	}
 	@media all and (orientation: landscape){
 		stroke-width:$calc_stroke_width_small;
 	}
+*/
 	@media all and (orientation: landscape) and (min-width: $small) {
-		stroke-width:$calc_stroke_width;
+		stroke-width:$calc_stroke_width_half;
 	}
 	@media all and (min-width: $small){
-		stroke-width:$calc_stroke_width;
+		stroke-width:$calc_stroke_width_half;
 	}
 }

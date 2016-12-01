@@ -144,7 +144,8 @@ article .media {
 article a:hover .media,
 article:hover .media,
 article a:active .media,
-article a:focus .media {
+article a:focus .media,
+body.touch section:hover .media {
 	@include opacity(0.7);
 	@include transition(opacity 1500ms $special_easing, background 300ms $ease-out, transform 1500ms $special_easing);
 }
@@ -174,7 +175,8 @@ article .text {
 article a:hover .text,
 article:hover .text,
 article a:active .text,
-article a:focus .text {
+article a:focus .text,
+body.touch section:hover .text {
 	@include opacity(1);
 	@include filter(blur(0));
 	@include transition( opacity 1000ms $special_easing, transform 1500ms $special_easing, filter 1000ms $special_easing);
