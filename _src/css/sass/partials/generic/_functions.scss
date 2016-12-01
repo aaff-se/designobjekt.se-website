@@ -1,0 +1,42 @@
+////////////////////////
+// Functions Partials
+//
+// All of your functions should go in this file.
+////////////////////////
+
+// Font size in em
+@function pxtoem($target-px, $context) {
+  @return ($target-px / $context) * 1em;
+}
+
+@function prefix($property, $prefixes: (webkit moz o ms)) {
+    $vendor-prefixed-properties: transform background-clip background-size;
+    $result: ();
+    @each $prefix in $prefixes {
+       @if index($vendor-prefixed-properties, $property) {
+         $property: -#{$prefix}-#{$property}
+       }
+       $result: append($result, $property);
+    }
+    @return $result;
+}
+ 
+@function trans-prefix($transition, $prefix: moz) {
+    $prefixed: ();
+    @each $trans in $transition {
+        $prop-name: nth($trans, 1);
+        $vendor-prop-name: prefix($prop-name, $prefix);
+        $prop-vals: nth($trans, 2);
+        $prefixed: append($prefixed, ($vendor-prop-name $prop-vals), comma);
+    }
+    
+    @return $prefixed;
+}
+
+@function col-width-percent($cols, $total_cols) {
+	@return ((100% * ($cols/$total_cols)));
+}
+
+@function col-width-vw($cols, $total_cols) {
+	@return ((100vw * ($cols/$total_cols)));
+}

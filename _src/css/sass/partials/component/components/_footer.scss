@@ -1,0 +1,264 @@
+footer {
+	position: fixed;
+	display: table;
+	z-index: -1;
+	top:0;
+	left:0;
+	height: 100%;
+	width: 100%;
+	
+	pointer-events: none;
+}
+
+footer.fade {
+	z-index: 50;
+}
+body.menu footer {
+	z-index: 50;
+	pointer-events: auto;
+}
+
+footer .wrapper {
+	padding: 9.375vw 0;
+	display: table-cell;
+	vertical-align: middle;
+
+}
+
+footer .about {
+	color: $color_body;
+	font-family: $font_light;
+	width: 96.875%;
+	margin: 0 0 0 3.125%;
+	font-size: 3em;
+	line-height: 1.25em;
+	@include opacity(0);
+	//@include transform(translateX(-0.8125vw));
+	@include transition(opacity 600ms $ease-out, filter 600ms $ease-out);
+	@include filter(blur($blur_value));
+	
+	
+	@media all and (min-width: $xsmall){
+		width: 71.875%;
+	}
+	@media all and (orientation: landscape){
+		width: 71.875%;
+	}
+	@media all and (orientation: landscape) and (min-width: $small){
+		width: 59.375%;
+	}
+	@media all and (min-width: $small){
+		width: 59.375%;
+	}
+
+}
+
+body.menu footer .about {
+	//@include transform(translateX(0));
+	@include opacity(1);
+	@include filter(blur(0));
+	@include transition(opacity 600ms $ease-out, filter 1500ms $special_easing);
+}
+
+footer .info {
+	color: $color_dark_grey;
+	width: 96.875%;
+	font-size: 1.5em;
+	margin: 1em 0 0 3.125%;
+	@include opacity(0);
+	//@include transform(translateX(-0.8125vw));
+	@include filter(blur($blur_value));
+	@include transition(opacity 600ms $ease-out, filter 600ms $ease-out);
+	
+	@media all and (min-width: $xsmall){
+		width: 71.875%;
+	}
+	@media all and (orientation: landscape){
+		width: 71.875%;
+	}
+	@media all and (orientation: landscape) and (min-width: $small) {
+		width: 59.375%;
+	}
+	@media all and (min-width: $small){
+		width: 59.375%;
+	}
+}
+
+body.menu footer .info {
+	@include opacity(1);
+	//@include transform(translateX(0));
+	@include filter(blur(0));
+	@include transition(opacity 1500ms $ease-out, filter 1800ms $special_easing);
+}
+
+footer .info a {
+	color: $color_dark_grey;
+	@include transition( color 800ms $ease-out);
+	text-decoration: none;
+}
+
+footer .info a:hover {
+	color: $color_body;
+	@include transition( color 400ms $ease-out);
+}
+
+footer .social {
+	position: fixed;
+	bottom: 3.125vw;
+	left: 3.125%;
+	@include opacity(0);
+	@include filter(blur($blur_value));
+	@include transition(opacity 600ms $ease-out, filter 600ms $ease-out);
+}
+
+body.menu footer .social {
+	@include opacity(1);
+	@include filter(blur(0));
+	@include transition(opacity 1500ms $ease-out, filter 1800ms $special_easing);
+}
+
+footer .social a {
+	color: $color_dark_grey_social;
+	@include transition( color 800ms $ease-out);
+	text-decoration: none;
+	width: 1.5em;
+	display: block;
+	float:left;
+	margin-right: .75em;
+}
+
+footer .social a:hover {
+	color: $color_body;
+	@include transition( color 400ms $ease-out);
+}
+
+body.menu .media {
+	@include filter(blur($blur_value));
+	@include opacity(0.5);
+}
+
+body.menu article.above .media,
+body.menu article.below .media {
+	@include filter(blur(0));
+	@include opacity(1);
+}
+
+.media {
+	@include filter(blur(0));
+	@include opacity(1);
+	@include transition(opacity 600ms $ease-out, filter 600ms $ease-out);
+}
+
+#loader {
+	position: relative;
+	text-decoration: none;
+	margin-bottom: col-width-vw(1,32);
+	margin-right: col-width-percent(1,32);
+	float: right;
+	color: $color_body;
+	width: col-width-percent(2,16);
+	height:	auto;
+	@include filter(blur(0));
+	@include transition(filter 600ms $ease-out, transform 0s linear);
+	@include transform(rotate(0));
+	
+	@media all and (min-width: $xsmall){
+		width: col-width-percent(1,16);
+	}
+	@media all and (orientation: landscape){
+		width: col-width-percent(1,16);
+	}
+	@media all and (orientation: landscape) and (min-width: $small) {
+		width: col-width-percent(1,32);
+	}
+	@media all and (min-width: $small){
+		width: col-width-percent(1,32);
+	}
+}
+
+#loader svg {
+	@include opacity(0.25);
+	@include transition(opacity 800ms $ease-out);
+}
+
+#loader:hover svg {
+	@include opacity(1);
+	@include transition(opacity 400ms $ease-out);
+}
+#loader.spin {
+	@include transition(filter 600ms $ease-out, transform 10s linear);
+	@include transform(rotate(1800deg));
+}
+
+#loader .loadercircle {
+    stroke: $color_body;
+    stroke-width: $calc_stroke_width_xsmall;
+    stroke-miterlimit:10;
+    @include transition(all 0 ease-in-out);
+    stroke-dasharray: 0, 114.668;
+    stroke-dashoffset: 0;
+	fill:none;
+
+	@media all and (min-width: $xsmall){
+	    stroke-width: $calc_stroke_width_small;
+	}
+	@media all and (orientation: landscape){
+	    stroke-width: $calc_stroke_width_small;
+	}
+	@media all and (orientation: landscape) and (min-width: $small) {
+	    stroke-width: $calc_stroke_width;
+	}
+	@media all and (min-width: $small){
+	    stroke-width: $calc_stroke_width;
+	}
+
+}
+
+#loader .loadercircle.stage2 {
+    transition: all 750ms ease-in-out 0ms;
+    stroke-dasharray: 80.2677, 114.668;
+    stroke-dashoffset: -34.004;
+}
+#loader .loadercircle.stage3 {
+    transition: all 850ms ease-in-out 0ms;
+    stroke-dasharray: 80.2677, 114.668;
+    stroke-dashoffset: -114.668;
+
+}
+
+#loader .back-to-top {
+	stroke:$color_body;
+	stroke-width: $calc_stroke_width;
+	stroke-miterlimit:10;
+	fill:none;
+	display: none;
+	@media all and (min-width: $xsmall){
+	    stroke-width: $calc_stroke_width_small;
+	}
+	@media all and (orientation: landscape){
+	    stroke-width: $calc_stroke_width_small;
+	}
+	@media all and (orientation: landscape) and (min-width: $small) {
+	    stroke-width: $calc_stroke_width;
+	}
+	@media all and (min-width: $small){
+	    stroke-width: $calc_stroke_width_large;
+	}
+
+}
+
+#loader.no-more .back-to-top {
+	display: block;
+}
+
+#loader.no-more .main-loader {
+	display: none;
+}
+
+
+
+body.menu #loader {
+	@include filter(blur($blur_value));
+	@include opacity(0.5);
+
+}

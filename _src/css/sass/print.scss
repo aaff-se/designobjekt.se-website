@@ -1,0 +1,18 @@
+////////////////////////
+// Print File
+//
+// This file gets turned into style.css. This file should really
+//  hold nothing except for imports of your base, layout, and design
+//  partials, plus the mixins required to kickstart Aura and Style Guide.
+// This file is styles specific to Printed files.
+////////////////////////
+
+////////////////////////
+// Print Base Import
+////////////////////////
+@import 'partials/base/print-base';
+
+////////////////////////
+// Import Component Guide
+////////////////////////
+@import 'partials/component/print-component';

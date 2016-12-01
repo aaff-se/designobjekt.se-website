@@ -1,0 +1,237 @@
+section {
+	padding: 9.375vw 0;
+	float: left;
+	width: 100%;
+	@media all and (orientation: landscape){
+		padding: 6.25vw 0;
+	}
+
+	@media all and (min-width: $small){
+		padding: 6.25vw 0;
+	}
+	
+	@include transition (transform 400ms $ease-out);
+	
+}
+
+section article {
+}
+
+section article.above,
+section article.below {
+	@include opacity(0);
+}
+
+section {
+	overflow: hidden;
+}
+
+/*
+section article.above.center {
+	@include transform( translateY(-1.5125vw));
+}
+
+section article.above {
+	@include transform( translateY(0) translateX(-0.8125vw));
+}
+
+section article.above.right {
+	@include transform( translateY(0) translateX(0.8125vw));
+}
+
+section article.below.center {
+	@include transform( translateY(0.8125vw));
+}
+section article.below {
+	@include transform( translateY(0) translateX(-0.8125vw));
+}
+section article.below.right {
+	@include transform( translateY(0) translateX(0.8125vw));
+}
+*/
+
+section article.above {
+	@include transform( translateY(col-width-vw(-1,64)));
+}
+
+section article.below {
+	@include transform( translateY(col-width-vw(1,64)));
+}
+
+
+article {
+	float:left;
+	position: relative;
+	z-index: 5;
+	width: col-width-percent(8,16);
+	margin: 0 0 0 col-width-percent(1,16);
+	perspective: 200vw;
+	@include transform( translateY(0) translateY(0));
+	@include opacity(1);
+	@include transition( transform 5000ms $special_easing, opacity 5000ms $special_easing);
+	float: left;
+
+	@media all and (min-width: $small){
+		width: col-width-percent(6,16);
+		margin: 0 0 0 col-width-percent(2,16);
+	}
+
+}
+
+
+article.right {
+	float:right;
+	margin: 0 col-width-percent(1,16) 0 0;
+	//width: col-width-percent(8,16);
+
+	@media all and (min-width: $small){
+		//width: col-width-percent(6,16);
+		margin: 0 col-width-percent(2,16) 0 0;
+	}
+}
+
+
+article.center {
+	float:none;
+	padding:0;
+	margin: 0 auto;
+	width: col-width-percent(8,16);
+	
+	@media all and (min-width: $small){
+		width: col-width-percent(6,16);
+	}
+}
+
+
+article.large {
+	width: col-width-percent(12,16);
+	margin: 0;
+	
+	@media all and (min-width: $small){
+		width: col-width-percent(9,16);
+	}
+}
+
+h2 {
+	font-size: 3em;
+	line-height: 1.25em;
+	font-family: $font_light;
+	font-weight: normal;
+	color:$color_body;
+	margin:0;
+}
+
+h3 {
+	font-size: 1.5em;
+	line-height: 1.25em;
+	font-family: $font_normal;
+	font-weight: normal;
+	color:$color_body;
+	margin: 0.5em 0 0;
+	@include opacity(0.25);
+}
+
+article .media {
+	@include opacity(1);
+	@include transition(opacity 3000ms $special_easing, background 300ms $ease-out, transform 3000ms $special_easing, filter 600ms $ease-out);
+	@include transform(translateX(0), translateY(0));
+	position: relative;
+	z-index: 5;
+
+	perspective: 200vw;
+}
+
+article a:hover .media,
+article:hover .media,
+article a:active .media,
+article a:focus .media {
+	@include opacity(0.75);
+	@include transition(opacity 1500ms $special_easing, background 300ms $ease-out, transform 1500ms $special_easing);
+}
+
+
+article .text {
+	position: absolute;
+	z-index: 6;
+	top:50%;
+	@include transform( translateY(-50%));
+	pointer-events: none;
+
+	left: col-width-percent(7,8);
+	width: col-width-percent(7,8);
+
+	@include opacity(0);
+	@include filter(blur($blur_value));	
+	@include transition( opacity 3000ms $special_easing, transform 3000ms $special_easing,filter 3000ms $special_easing );
+
+	@media all and (min-width: $small){
+		left:col-width-percent(5,6);
+		width: col-width-percent(8,6);
+	}
+
+}
+
+article a:hover .text,
+article:hover .text,
+article a:active .text,
+article a:focus .text {
+	@include opacity(1);
+	@include filter(blur(0));
+	@include transition( opacity 1000ms $special_easing, transform 1500ms $special_easing, filter 1000ms $special_easing);
+}
+
+article.large .text {
+	left: col-width-percent(8,12);
+	width: col-width-percent(7,12);
+
+	@media all and (min-width: $small){
+		left: col-width-percent(8,9);
+		width: col-width-percent(7,9);
+	}
+}
+
+article.right .text {
+	//@include transform( translateY(-50%) translateX(0.5vw));
+	@include transform( translateY(-50%));
+	left: auto;
+	text-align: right;
+	right:col-width-percent(7,8);
+	
+	@media all and (min-width: $small){
+		right: col-width-percent(5,6);
+	}
+}
+
+article.large.right .text {
+	left: auto;
+	right: col-width-percent(8,12);
+	@media all and (min-width: $small){
+		right: col-width-percent(8,9);
+	}
+}
+
+
+article.center .text {
+//	@include transform( translateY(-50%) translateX(-0.5vw));
+	@include transform( translateY(-50%));
+	left: col-width-percent(4,8);
+	width: col-width-percent(7,8);
+	
+	@media all and (min-width: $small){
+		left: col-width-percent(5,6);
+		width: col-width-percent(5,6);
+	}
+}
+
+article.center .text.left {
+//	@include transform( translateY(-50%) translateX(0.5vw));
+	@include transform( translateY(-50%) );
+	left: auto;
+	text-align: right;
+	right: col-width-percent(4,8);
+	
+	@media all and (min-width: $small){
+		right: col-width-percent(5,6);
+		width: col-width-percent(5,6);
+	}
+}

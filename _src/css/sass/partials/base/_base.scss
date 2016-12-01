@@ -1,0 +1,136 @@
+@import '../generic/fonts';
+@import '../generic/normalize';
+
+//fonts need to come first in order to work on windows mobile (still true?)
+
+@import "compass";
+@import "compass/support";
+@import "compass/utilities/general/clearfix";
+@import "compass/reset/utilities";
+@import "compass/css3";
+@import "compass/css3/opacity";
+@import "compass/css3/box-shadow";
+
+@import '../generic/functions';
+@import '../generic/variables';
+@import '../generic/mixins';
+@import '../generic/extendables';
+@import '../generic/layout';
+@import '../generic/typography';
+
+::selection {
+	background: $color_body; 
+	color: $color_white; 
+}
+::-moz-selection { 
+	background: $color_body; 
+	color: $color_white; 
+}
+
+::-webkit-scrollbar {
+	width: 0;
+}
+
+* {
+	backface-visibility: hidden;
+}
+
+body {
+	font-family: $font_normal;
+	font-weight: normal;
+	font-size: $calc_font_size_l;
+	line-height: $base_line_height;
+	background: $color_white;
+	color: $color_body;
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	z-index: 10;
+	margin:0;
+	padding:0;
+	@include opacity(0);
+	-webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+	@include transition(opacity 200ms $ease-out);
+	
+	@media all and (min-width: $small){
+		font-size: $calc_font_size;
+	}
+//cursor
+}
+
+body.loaded {
+	@include opacity(1);
+}
+
+a {
+//cursor
+}
+
+body.menu {
+//cursor
+	overflow: hidden;
+}
+
+body.menu a {
+//cursor
+}
+
+
+.media {
+	background: none;
+	width: 100%;
+	height: auto;
+	float: left;
+	display: block;
+}
+
+.media.unveil {
+	background: $color_light_grey;
+	//@include transition(background 300ms $ease-out);
+}
+.media.unveil.unveiled {
+	background: transparent;
+}
+
+
+img {
+	width: 100%;
+	height: auto;
+	display: block;
+	@include opacity(0);
+	@include transition(opacity 300ms $ease-out);
+}
+
+img.loaded {
+	@include opacity(1);
+}
+
+svg {
+	fill: currentColor;
+	stroke: currentColor;
+	width: 100%;
+	height: auto;
+	display: block;
+	clear: both;
+	backface-visibility: hidden;
+	overflow: visible;
+}
+
+iframe,
+video {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+a:hover,
+a:active,
+a:visited,
+a:focus {
+	color: $color_body;
+	text-decoration: none;
+}
+
+.clear {
+	clear: both;
+}

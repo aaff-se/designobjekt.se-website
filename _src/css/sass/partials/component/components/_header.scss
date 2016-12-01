@@ -1,0 +1,55 @@
+.logo {
+	width: col-width-percent(2,16);
+	height: auto;
+	position: fixed;
+	z-index: 100;
+	top: col-width-vw(1,32);
+	left: col-width-percent(1,32);
+	
+	@media all and (min-width: $xsmall){
+		width: col-width-percent(1,16);
+	}
+	@media all and (orientation: landscape){
+		width: col-width-percent(1,16);
+	}
+	@media all and (orientation: landscape) and (min-width: $small) {
+		width: col-width-percent(1,32);
+	}
+	@media all and (min-width: $small){
+		width: col-width-percent(1,32);
+	}
+}
+
+.logo a svg {
+	@include opacity(0.25);
+	@include transition( opacity 800ms $ease-out);
+}
+
+.logo a:hover svg {
+	@include opacity(1);
+	@include transition( opacity 400ms $ease-out);
+}
+
+.logo svg {
+	overflow: visible;
+}
+
+.logo svg .content{
+	color: $color_body;
+	fill:transparent;
+	stroke: $color_body;
+	stroke-width:$calc_stroke_width_xsmall;
+	stroke-miterlimit:10;
+	@media all and (min-width: $xsmall){
+		stroke-width:$calc_stroke_width_small;
+	}
+	@media all and (orientation: landscape){
+		stroke-width:$calc_stroke_width_small;
+	}
+	@media all and (orientation: landscape) and (min-width: $small) {
+		stroke-width:$calc_stroke_width;
+	}
+	@media all and (min-width: $small){
+		stroke-width:$calc_stroke_width;
+	}
+}

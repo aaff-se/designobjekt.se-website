@@ -1,0 +1,15 @@
+////////////////////////
+// Module Partials
+//
+// Seperate your layout from Module, building sub folders and partials
+//  in this folder, with everything being imported, in casading order,
+//  into this file.
+//
+////////////////////////
+
+////////////////////////
+// Module imports
+////////////////////////
+@import 'components/header';
+@import 'components/footer';
+@import 'components/article';

@@ -1,0 +1,51 @@
+////////////////////////
+// Variables
+//
+// All variables go here.
+////////////////////////
+
+//lazy...
+
+$font_normal: 'Graphik-Light', sans-serif;
+$font_light: 'Graphik-Extralight', sans-serif;
+
+$color_body: #505050;
+$color_white: #fff;
+$color_dark_grey: #d3d3d3;
+$color_dark_grey_social: #ddd;
+$color_light_grey: #f8f8f8;
+
+$xsmall: 720px;
+
+$small: 1280px;
+
+$base_font_size: 1.083vw;
+
+$calc_font_size: 1.2vw;
+
+$calc_font_size_l: 2.4vw;
+
+$calc_stroke_width_large: .15vw;
+
+$calc_stroke_width: .3vw;
+
+$calc_stroke_width_small: .5vw;
+
+$calc_stroke_width_xsmall: .7vw;
+
+$calc_stroke_width_xxsmall: .9vw;
+
+
+$base_line_height: 1.25em;
+$baseline: 1em;
+
+$transition_time: 140ms;
+
+$easing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+$ease-out: cubic-bezier(0.39, 0.575, 0.565, 1);
+$ease-in: cubic-bezier(0.47, 0, 0.745, 0.715);
+
+$special_easing: cubic-bezier(.18,1,.21,1);
+
+$blur_value: 20px;

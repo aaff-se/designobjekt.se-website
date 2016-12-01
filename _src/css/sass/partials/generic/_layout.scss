@@ -1,0 +1,21 @@
+/////////////////////////////////////////////////////
+// Layout
+//
+// General Layout, speficic layout goes in components
+/////////////////////////////////////////////////////
+
+main {
+	margin: 9.375vw 0;
+	float: left;
+	width: 100%;
+	overflow-x: hidden;
+	z-index: 1;
+	position: relative;
+
+	@media all and (orientation: landscape){
+		margin: 6.25vw 0;
+	}
+	@media all and (min-width: $small){
+		margin: 6.25vw 0;
+	}
+}
