@@ -1,0 +1,3 @@
+# this file is here to keep the font/ dir in the git repo. it is saved as a dot file so our grunt:ing doesn't copy it to the public dist dir.
+
+# here we keep all the font files that are coped and then served from our dist dir - although the font files are not uploaded to the git repo due to licensing.
