@@ -86,8 +86,8 @@ var aaffOnHover = function aaffOnHover(){
 		dx = offsetX - initX;
 		dy = offsetY - initY;
 		
-		tiltx = Math.round( (dy / cy) * 100000 ) / 100000;
-		tilty = Math.round( (dx / cx) * 100000 ) / 100000;
+		tiltx = Math.round( (dy / cy) * 100 ) / 100;
+		tilty = Math.round( (dx / cx) * 100 ) / 100;
 		// radius = Math.sqrt(Math.pow(tiltx,2) + Math.pow(tilty,2));
 		// degree = Math.sqrt(radius * 15)*2;
 		
@@ -103,7 +103,7 @@ var aaffOnHover = function aaffOnHover(){
 			'-webkit-transform':translateTransform,
 			'-moz-transform':translateTransform
 		});
-		
+			
 		$mouseHoverText.css({'transform':translateTransformText,
 			'-webkit-transform': translateTransformText,
 			'-moz-transform': translateTransformText
