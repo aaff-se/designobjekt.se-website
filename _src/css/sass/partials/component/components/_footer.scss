@@ -8,6 +8,13 @@ footer {
 	width: 100%;
 	
 	pointer-events: none;
+	@include opacity(0);
+	@include transition(opacity 200ms $ease-out);
+}
+
+
+body.loaded footer {
+	@include opacity(1);
 }
 
 footer.fade {
@@ -31,7 +38,7 @@ footer .about {
 	width: 96.875%;
 	margin: 0 0 0 3.125%;
 	font-size: 3em;
-	line-height: 1.25em;
+	line-height: 1.125em;
 	@include opacity(0);
 	//@include transform(translateX(-0.8125vw));
 	@include transition(opacity 600ms $ease-out, filter 600ms $ease-out);
@@ -64,7 +71,8 @@ footer .info {
 	color: $color_dark_grey;
 	width: 96.875%;
 	font-size: 1.5em;
-	margin: 1em 0 0 3.125%;
+	line-height: 1.125em;
+	margin: 0.5em 0 0 3.125%;
 	@include opacity(0);
 	//@include transform(translateX(-0.8125vw));
 	@include filter(blur($blur_value));

@@ -11,6 +11,8 @@ main {
 	overflow-x: hidden;
 	z-index: 1;
 	position: relative;
+	@include opacity(0);
+	@include transition(opacity 200ms $ease-out);
 
 	@media all and (orientation: landscape){
 		margin: 6.25vw 0;
@@ -18,4 +20,23 @@ main {
 	@media all and (min-width: $small){
 		margin: 6.25vw 0;
 	}
+}
+
+
+body.loaded main {
+	@include opacity(1);
+}
+
+
+.preloader {
+	pointer-events: none;
+	z-index: 1000;
+	position: fixed;
+	width: 160px;
+	height: 160px;
+	max-width: 25%;
+	max-width: 25vw;
+	@include transform(translateY(-50%) translateX(-50%));
+	top:50%;
+	left:50%;
 }

@@ -1,3 +1,12 @@
+header {
+	@include opacity(0);
+	@include transition(opacity 200ms $ease-out);
+
+}
+body.loaded header {
+	@include opacity(1);
+}
+
 .logo {
 	width: col-width-percent(2,16);
 	height: auto;

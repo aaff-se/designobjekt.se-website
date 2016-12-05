@@ -32,28 +32,26 @@ DesignObjekt is a project by Anton Andersson Form & Funktioner and 1910 Design &
 			<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<![endif]-->
 
-		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-			ga('create', 'UA-88292482-1', 'auto');
-			ga('send', 'pageview');
-		</script>
 
 	</head>
 	<body>
 		<style>
-			body { opacity: 0; }
+			main { opacity: 0; }
+			footer { opacity: 0; }
 		</style>
 		<noscript>
 			<style>
-				body { opacity: 1 !important; }
+				main { opacity: 1 !important; }
+				footer { opacity: 1 !important; }
 				div.media.unveil img { display: none; }
 				div.media.unveil img.loaded { display: block; }
 			</style>
 		</noscript>
-
+		
+		<div class="preloader">
+			<img class="loaded" src="<?php echo _TEMPLATE_DIR_URI; ?>/_static/imgs/designobjekt_preloader.gif?<?php echo time('U');?>" width="160px" height="160px">
+		</div>
+		
 		<header>
 			<div class="logo">
 				<a id="menu" href="#">

@@ -81,34 +81,34 @@ var aaffOnHover = function aaffOnHover(){
 			
 		cx = $mouseHoverMedia.width() / 2;
 		cy = $mouseHoverMedia.height() / 2;
-//		dx = offsetX - cx;
-//		dy = offsetY - cy;
 		dx = offsetX - initX;
 		dy = offsetY - initY;
+		d2x = offsetX - cx;
+		d2y = offsetY - cy;
+		
 		
 		tiltx = Math.round( (dy / cy) * 100 ) / 100;
 		tilty = Math.round( (dx / cx) * 100 ) / 100;
-		// radius = Math.sqrt(Math.pow(tiltx,2) + Math.pow(tilty,2));
-		// degree = Math.sqrt(radius * 15)*2;
-		
+
+		 //radius = Math.sqrt(Math.pow(tilt2x,2) + Math.pow(tilt2y,2));
+		 //degree = Math.tan(d2y/d2x);
 
 		// var dTransform = 'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)';
 		// var dTransformText = 'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + (degree*0.75) + 'deg)';
 
 		var translateTransform = 'translateY(' + ( (tiltx) * 10) + 'px) translateX(' + ( (tilty) * 10) + 'px)';
 		var translateTransformText = 'translateY(calc(-50% + ' + ( (tiltx) * 30) + 'px)) translateX(' + ( (tilty) * 30) + 'px)';
-		
+
 		$mouseHoverMedia.css({
 			'transform':translateTransform,
 			'-webkit-transform':translateTransform,
-			'-moz-transform':translateTransform
+			'-moz-transform':translateTransform,
 		});
-			
+
 		$mouseHoverText.css({'transform':translateTransformText,
 			'-webkit-transform': translateTransformText,
 			'-moz-transform': translateTransformText
 		});
-
 	};
 	
 	return {

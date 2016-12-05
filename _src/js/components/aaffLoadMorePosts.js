@@ -149,6 +149,7 @@ var aaIrLoadMoreArticles = function aaIrLoadMoreArticles(){
 					aaChangeSrc.init();
 					aaUnveil();
 					aaffAddScrollClasses.init();
+					aaffOnHover.init();
 				} else {
 					$loaderLink.off('click',loaderClick);
 					$loaderLink.on('click',scrollTopClick);

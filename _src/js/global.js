@@ -24,9 +24,15 @@ $document.ready(function() { aaffInitReady(); });
 
 $window.on('load', function() { aaffInitLoad(); });
 
+$window.on('unload', function(){ aaffInitUnload(); });
+
 $window.on('resize', function() { aaffResize.init(); });
 
 $window.on('scroll', function() { aaffScroll.onScroll(); });
+
+$window.on('focus', function() { aaffInitFocus(); });
+
+$window.on('blur', function() { aaffInitBlur(); });
 
 var aaffInitReady = function aaffInitReady() {
 	//add all functions here:
@@ -38,6 +44,8 @@ var aaffInitReady = function aaffInitReady() {
 	aaffMenu.init();
 	aaSvgs.init();
 	aaIrLoadMoreArticles.init();
+	
+	
 	//END add all functions here:
 
 };
@@ -45,14 +53,30 @@ var aaffInitReady = function aaffInitReady() {
 var aaffInitLoad = function aaffLoad() {
 	//add all functions here:
 
-	$body.addClass('loaded');
 	aaffAddScrollClasses.init();
 	aaffOnHover.init();
 	aaChangeSrc.init();
 	aaUnveil();
+	setTimeout(function(){
+		$body.addClass('loaded');
+		$('.preloader').remove();
+	},3000);
+	
+	//$("link[rel='shortcut icon']").attr("href", "/favicon.ico");
+
 	
 	//END add all functions here:
 };
+
+var aaffInitFocus = function aaffInitFocus(){
+	$("link[rel='shortcut icon']").attr("href", "/favicon.ico");
+};
+
+var aaffInitBlur = function aaffInitBlur(){
+	$("link[rel='shortcut icon']").attr("href", "/favicon2.ico");
+};
+
+
 
 var aaffResize = function aaffResize() {
 
