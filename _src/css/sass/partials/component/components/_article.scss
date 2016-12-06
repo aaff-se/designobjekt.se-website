@@ -63,7 +63,7 @@ article {
 	float:left;
 	position: relative;
 	z-index: 5;
-	width: col-width-percent(8,16);
+	width: col-width-percent(10,16);
 	margin: 0 0 0 col-width-percent(1,16);
 	perspective: 200vw;
 	@include transform( translateY(0) translateY(0));
@@ -95,7 +95,7 @@ article.center {
 	float:none;
 	padding:0;
 	margin: 0 auto;
-	width: col-width-percent(8,16);
+	width: col-width-percent(10,16);
 	
 	@media all and (min-width: $small){
 		width: col-width-percent(6,16);
@@ -104,7 +104,7 @@ article.center {
 
 
 article.large {
-	width: col-width-percent(12,16);
+	width: col-width-percent(14,16);
 	margin: 0;
 	
 	@media all and (min-width: $small){
@@ -113,22 +113,30 @@ article.large {
 }
 
 h2 {
-	font-size: 3em;
+	font-size: 3.5em;
 	line-height: 1.125em;
 	font-family: $font_light;
 	font-weight: normal;
 	color:$color_body;
 	margin:0;
+	
+	@media all and (min-width: $xsmall){
+	font-size: 3em;
+	}
 }
 
 h3 {
-	font-size: 1.5em;
+	font-size: 1.75em;
 	line-height: 1.125em;
 	font-family: $font_normal;
 	font-weight: normal;
 	color:$color_body;
 	margin: 0.5em 0 0;
 	@include opacity(0.25);
+	
+	@media all and (min-width: $xsmall){
+	font-size: 1.5em;
+	}
 }
 
 article .media {
@@ -137,6 +145,14 @@ article .media {
 	@include transform(translateX(0), translateY(0));
 	position: relative;
 	z-index: 5;
+}
+
+article {
+	pointer-events: none;
+}
+
+body.loaded article {
+	pointer-events: auto;
 }
 
 article a:hover .media,
@@ -169,8 +185,8 @@ article .text {
 	@include transform( translateY(-50%));
 	pointer-events: none;
 
-	left: col-width-percent(7,8);
-	width: col-width-percent(7,8);
+	left: col-width-percent(7,10);
+	width: col-width-percent(7,10);
 
 	@include opacity(0);
 	@include filter(blur($blur_value));	
@@ -194,8 +210,8 @@ body.touch section:hover .text {
 }
 
 article.large .text {
-	left: col-width-percent(8,12);
-	width: col-width-percent(7,12);
+	left: col-width-percent(8,14);
+	width: col-width-percent(7,14);
 
 	@media all and (min-width: $small){
 		left: col-width-percent(8,9);
@@ -208,7 +224,7 @@ article.right .text {
 	@include transform( translateY(-50%));
 	left: auto;
 	text-align: right;
-	right:col-width-percent(7,8);
+	right:col-width-percent(7,10);
 	
 	@media all and (min-width: $small){
 		right: col-width-percent(5,6);
@@ -217,7 +233,7 @@ article.right .text {
 
 article.large.right .text {
 	left: auto;
-	right: col-width-percent(8,12);
+	right: col-width-percent(8,14);
 	@media all and (min-width: $small){
 		right: col-width-percent(8,9);
 	}
@@ -227,8 +243,8 @@ article.large.right .text {
 article.center .text {
 //	@include transform( translateY(-50%) translateX(-0.5vw));
 	@include transform( translateY(-50%));
-	left: col-width-percent(4,8);
-	width: col-width-percent(7,8);
+	left: col-width-percent(4,10);
+	width: col-width-percent(7,10);
 	
 	@media all and (min-width: $small){
 		left: col-width-percent(5,6);
@@ -241,7 +257,7 @@ article.center .text.left {
 	@include transform( translateY(-50%) );
 	left: auto;
 	text-align: right;
-	right: col-width-percent(4,8);
+	right: col-width-percent(4,10);
 	
 	@media all and (min-width: $small){
 		right: col-width-percent(5,6);

@@ -31,10 +31,14 @@ var aaffOnHover = function aaffOnHover(){
 		$articles.off('mouseenter mouseleave');
 		
 		$articles.hover(onHover, function(e){
-			$mouseHoverMedia.attr('style','');
-			$mouseHoverText.attr('style','');
+			e.stopPropagation();
+			if($mouseHoverMedia)
+				$mouseHoverMedia.attr('style','');
+			if($mouseHoverText)
+				$mouseHoverText.attr('style','');
 			$(e.currentTarget).off('mousemove');
 			if(interval)
+			
 				clearTimeout(interval);
 			timeout = $mouseHoverMedia = initX = initY = offsetX = offsetY = prevOffsetX = prevOffsetY = $mouseHoverText = false;
 		});
@@ -48,7 +52,6 @@ var aaffOnHover = function aaffOnHover(){
 	};
 	
 	var onHover = function onHover(e){
-		runit = true;
 		$(e.currentTarget).on('mousemove',onMouseMove);
 		if(interval)
 			clearInterval(interval);
@@ -57,10 +60,10 @@ var aaffOnHover = function aaffOnHover(){
 	
 	
 	var onMouseMove = function onMouseMove(e){
-		
 		if(!$mouseHoverMedia || !$mouseHoverText) {
-			 $mouseHoverMedia = ($(e.currentTarget).find('.media'));
-			 $mouseHoverText = ($(e.currentTarget).find('.text'));
+			var $current = $(e.currentTarget);
+			 $mouseHoverMedia = ($current.find('.media'));
+			 $mouseHoverText = ($current.find('.text'));
 			position3dFunction();
 		}
 		offsetX = e.offsetX;

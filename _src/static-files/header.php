@@ -48,9 +48,37 @@ DesignObjekt is a project by Anton Andersson Form & Funktioner and 1910 Design &
 			</style>
 		</noscript>
 		
-		<div class="preloader">
-			<img class="loaded" src="<?php echo _TEMPLATE_DIR_URI; ?>/_static/imgs/designobjekt_preloader.gif?<?php echo time('U');?>" width="160px" height="160px">
+		<div id="preloader" class="preloader">
+			<img id="preloader_img" class="" src="" width="160px" height="160px">
 		</div>
+		<script type="text/javascript" id="init_script">
+				
+			var objImage;
+			var thisScript = document.getElementById('init_script');
+			var initBody = document.getElementsByTagName('body')[0];
+			var initPreloader = document.getElementById('preloader');
+			var initPreloaderImg = document.getElementById('preloader_img');
+			
+			var newSrc = "<?php echo _TEMPLATE_DIR_URI; ?>/_static/imgs/designobjekt_preloader.gif";
+			objImage = new Image();
+	
+			objImage.onload = function(){
+				
+				initPreloaderImg.src = newSrc;
+				initPreloaderImg.className= 'loaded';
+				
+				setTimeout(function(){
+					initBody.className= 'loaded';
+
+					initPreloader.parentNode.removeChild(initPreloader);
+					thisScript.parentNode.removeChild(thisScript);
+					objImage = thisScript = initBody = initPreloader = initPreloaderImg = newSrc = null;
+				},2500);
+			};
+			objImage.src = newSrc;
+			
+				
+		</script>
 		
 		<header>
 			<div class="logo">

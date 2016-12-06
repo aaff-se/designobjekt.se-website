@@ -41,6 +41,7 @@ var aaffInitReady = function aaffInitReady() {
 	aaffReadyTouch.init();
 	aaBrowserDimensions.calc();
 	aaffScroll.init();
+	//aaffAutoScroll.init();
 	aaffMenu.init();
 	aaSvgs.init();
 	aaIrLoadMoreArticles.init();
@@ -57,10 +58,6 @@ var aaffInitLoad = function aaffLoad() {
 	aaffOnHover.init();
 	aaChangeSrc.init();
 	aaUnveil();
-	setTimeout(function(){
-		$body.addClass('loaded');
-		$('.preloader').remove();
-	},3000);
 	
 	//$("link[rel='shortcut icon']").attr("href", "/favicon.ico");
 

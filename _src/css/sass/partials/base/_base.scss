@@ -43,6 +43,7 @@ body {
 	background: $color_white;
 	color: $color_body;
 	position: relative;
+	font-smoothing: antialiased;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	z-index: 10;
@@ -56,11 +57,20 @@ body {
 	@media all and (min-width: $small){
 		font-size: $calc_font_size;
 	}
-//cursor
+	cursor: url('../imgs/cursor1x.png') 6 6, auto;
+	cursor: -webkit-image-set(
+		url('../imgs/cursor1x.png') 1x,
+		url('../imgs/cursor2x.png') 2x
+	) 6 6, auto;
 }
 
 a {
-//cursor
+	cursor: url('../imgs/cursor-fill1x.png') 6 6, auto;
+	cursor: -webkit-image-set(
+		url('../imgs/cursor-fill1x.png') 1x,
+		url('../imgs/cursor-fill2x.png') 2x
+	) 6 6, auto;
+	color: $color_body;
 }
 
 body.menu {
@@ -119,9 +129,10 @@ video {
 	height: auto;
 	display: block;
 }
-
+a,
 a:hover,
 a:active,
+a:link,
 a:visited,
 a:focus {
 	color: $color_body;

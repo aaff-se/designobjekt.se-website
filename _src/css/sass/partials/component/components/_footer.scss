@@ -35,9 +35,9 @@ footer .wrapper {
 footer .about {
 	color: $color_body;
 	font-family: $font_light;
-	width: 96.875%;
-	margin: 0 0 0 3.125%;
-	font-size: 3em;
+	width: col-width-percent(15,16);
+	margin: 0 0 0 col-width-percent(1,32);
+	font-size: 3.5em;
 	line-height: 1.125em;
 	@include opacity(0);
 	//@include transform(translateX(-0.8125vw));
@@ -47,6 +47,7 @@ footer .about {
 	
 	@media all and (min-width: $xsmall){
 		width: 71.875%;
+		font-size: 3em;
 	}
 	@media all and (orientation: landscape){
 		width: 71.875%;
@@ -68,11 +69,10 @@ body.menu footer .about {
 }
 
 footer .info {
-	color: $color_dark_grey;
-	width: 96.875%;
-	font-size: 1.5em;
+	font-size: 1.75em;
 	line-height: 1.125em;
-	margin: 0.5em 0 0 3.125%;
+	width: col-width-percent(15,16);
+	margin: 0.5em 0 0 col-width-percent(1,32);
 	@include opacity(0);
 	//@include transform(translateX(-0.8125vw));
 	@include filter(blur($blur_value));
@@ -80,6 +80,7 @@ footer .info {
 	
 	@media all and (min-width: $xsmall){
 		width: 71.875%;
+		font-size: 1.5em;
 	}
 	@media all and (orientation: landscape){
 		width: 71.875%;
@@ -100,14 +101,18 @@ body.menu footer .info {
 }
 
 footer .info a {
-	color: $color_dark_grey;
-	@include transition( color 800ms $ease-out);
+	@include opacity(0.4);
+	@include transition( opacity 800ms $ease-out);
 	text-decoration: none;
 }
 
+footer .info span {
+	@include opacity(0.25);
+}
+
 footer .info a:hover {
-	color: $color_body;
-	@include transition( color 400ms $ease-out);
+	@include opacity(1);
+	@include transition( opacity 400ms $ease-out);
 }
 
 footer .social {
@@ -126,13 +131,15 @@ body.menu footer .social {
 }
 
 footer .social a {
-	color: $color_dark_grey_social;
+	color: $color_body;
 	@include transition( color 800ms $ease-out);
 	text-decoration: none;
 	width: 2.5em;
 	margin-right: 1em;
 	display: block;
 	float:left;
+	@include opacity(0.2);
+	@include transition( opacity 800ms $ease-out);
 	@media all and (min-width: $xsmall){
 		width: 1.75em;
 	}
@@ -149,8 +156,9 @@ footer .social a {
 }
 
 footer .social a:hover {
+	@include opacity(1);
 	color: $color_body;
-	@include transition( color 400ms $ease-out);
+	@include transition( opacity 400ms $ease-out);
 }
 
 body.menu .media {

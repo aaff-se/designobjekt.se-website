@@ -20,7 +20,7 @@ if($echo_clear) echo '<div class="clear"></div>';
 		<footer>
 			<div class="wrapper">
 				<p class="about"><?php echo _SITE_DESC; ?></p>
-				<p class="info">designobjekt.se is a project by <a target="_blank" href="https://www.aaff.se">AAFF</a> & <a target="_blank" href="http://weare1910.com">1910</a></p>
+				<p class="info"><span>designobjekt.se is a project by </span><a target="_blank" href="https://www.aaff.se">AAFF</a><span> & </span><a target="_blank" href="http://weare1910.com">1910</a></p>
 			</div>
 				<p class="social"><a target="_blank" href="https://www.instagram.com/designobjekt"><?php svg_instagram(); ?></a><a target="_blank" href="https://github.com/aaff-se/designobjekt.se-website"><?php svg_github(); ?></a></p>
 		</footer>
