@@ -45,7 +45,7 @@ var aaffInitReady = function aaffInitReady() {
 	aaffMenu.init();
 	aaSvgs.init();
 	aaIrLoadMoreArticles.init();
-	
+	aaffEE.init();
 	
 	//END add all functions here:
 
