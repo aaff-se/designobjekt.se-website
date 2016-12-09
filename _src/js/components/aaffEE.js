@@ -15,15 +15,20 @@ var aaffEE = function aaffEE(){
 	var timeoutInt = 4000;
 	var prevTyped;
 	var audio = false;
-
+	var $logo;
+	var link = "/wp/wp-content/themes/do/_static/imgs/ee2.mp3";
+	var link2 = "/wp/wp-content/themes/do/_static/imgs/ee3.mp3";
+	var currentAudio;
 	var init = function init(){
-		if(window.console) console.log('(⁎˃ᆺ˂) Hello lil cat');
+		$logo = $('.logo');
+		if(window.console) console.log("(=^･^=) Hello lil cat, type 'cat' to get a meow back!");
 		
 		$document.keyup(function(e) {
 
 			if(e.keyCode == 67) {
-				if(!audio) {
-					audio = new Audio("/wp/wp-content/themes/do/_static/imgs/ee.mp3");
+				if(!audio || currentAudio != link) {
+					audio = new Audio(link);
+					currentAudio = link;
 				}
 				if(timeout) clearTimeout(timeout);
 				timeout = setTimeout(timeoutFunc, timeoutInt);
@@ -38,6 +43,24 @@ var aaffEE = function aaffEE(){
 				meow();
 				prevTyped = false;
 			}
+			if(e.keyCode == 68) {
+				if(!audio || currentAudio != link2) {
+					audio = new Audio(link2);
+					currentAudio = link2;
+				}
+				if(timeout) clearTimeout(timeout);
+				timeout = setTimeout(timeoutFunc, timeoutInt);
+				prevTyped = e.keyCode;
+			}
+			if(e.keyCode == 79 && prevTyped == 68) {
+				if(timeout) clearTimeout(timeout);
+				timeout = setTimeout(timeoutFunc, timeoutInt);
+				prevTyped = e.keyCode;
+			}
+			if(e.keyCode == 71 && prevTyped == 79) {
+				woof();
+				prevTyped = false;
+			}
 		});
 	};
 	
@@ -48,6 +71,20 @@ var aaffEE = function aaffEE(){
 	var meow = function meow(){
 		audio.load();
 		audio.play();
+		$logo.addClass('cat');
+		if(window.console) console.log("MEOW!");
+		setTimeout(function(){
+			$logo.removeClass('cat');
+		}, 1500);
+		if(typeof ga === "function")
+			ga('send', 'event', 'Easteregg', 'cat');
+	};
+	var woof = function woof(){
+		audio.load();
+		audio.play();
+		if(window.console) console.log("No, wrong animal!");
+		if(typeof ga === "function")
+			ga('send', 'event', 'Easteregg', 'dog');
 	};
 	
 	return {
@@ -56,7 +93,3 @@ var aaffEE = function aaffEE(){
 	
 }();
 
-
-// c = 67
-// a = 65
-// t = 84

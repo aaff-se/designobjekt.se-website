@@ -58,7 +58,7 @@ DesignObjekt is a project by Anton Andersson Form & Funktioner and 1910 Design &
 			var initBody = document.getElementsByTagName('body')[0];
 			var initPreloader = document.getElementById('preloader');
 			var initPreloaderImg = document.getElementById('preloader_img');
-			
+			var cat = 'Not here, in the main window!'
 			var newSrc = "<?php echo _TEMPLATE_DIR_URI; ?>/_static/imgs/designobjekt_preloader.gif";
 			objImage = new Image();
 	

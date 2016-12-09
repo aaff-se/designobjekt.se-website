@@ -43,6 +43,10 @@ body.loaded header {
 	overflow: visible;
 }
 
+.logo.cat {
+	@include animation(rotatehead ($transition_time * 10) 1 ease-in-out);
+}
+
 .logo svg .content{
 	color: $color_body;
 	fill:transparent;
@@ -63,4 +67,10 @@ body.loaded header {
 	@media all and (min-width: $small){
 		stroke-width:$calc_stroke_width_half;
 	}
+}
+.logo svg .content.hidden {
+	@include opacity(0);
+}
+.logo.cat svg .content.hidden {
+	@include animation(showface ($transition_time * 10) 1 ease-in-out);
 }
