@@ -55,14 +55,14 @@ var aaffOnHover = function aaffOnHover(){
 		$(e.currentTarget).on('mousemove',onMouseMove);
 		if(interval)
 			clearInterval(interval);
-			interval = setInterval(position3dFunction, 100);
+		interval = setInterval(position3dFunction, 100);
 	};
 	
 	
 	var onMouseMove = function onMouseMove(e){
 		if(!$mouseHoverMedia || !$mouseHoverText) {
 			var $current = $(e.currentTarget);
-			 $mouseHoverMedia = ($current.find('.media'));
+			 $mouseHoverMedia = ($current.find('.media-wrapper'));
 			 $mouseHoverText = ($current.find('.text'));
 			position3dFunction();
 		}
@@ -86,8 +86,8 @@ var aaffOnHover = function aaffOnHover(){
 		cy = $mouseHoverMedia.height() / 2;
 		dx = offsetX - initX;
 		dy = offsetY - initY;
-		d2x = offsetX - cx;
-		d2y = offsetY - cy;
+//		d2x = offsetX - cx;
+//		d2y = offsetY - cy;
 		
 		
 		tiltx = Math.round( (dy / cy) * 100 ) / 100;
@@ -105,13 +105,14 @@ var aaffOnHover = function aaffOnHover(){
 		$mouseHoverMedia.css({
 			'transform':translateTransform,
 			'-webkit-transform':translateTransform,
-			'-moz-transform':translateTransform,
+			'-moz-transform':translateTransform
 		});
-
-		$mouseHoverText.css({'transform':translateTransformText,
+		$mouseHoverText.css({
+			'transform':translateTransformText,
 			'-webkit-transform': translateTransformText,
 			'-moz-transform': translateTransformText
 		});
+
 	};
 	
 	return {

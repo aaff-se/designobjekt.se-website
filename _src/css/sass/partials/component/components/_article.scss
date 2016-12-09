@@ -139,14 +139,6 @@ h3 {
 	}
 }
 
-article .media {
-	@include opacity(1);
-	@include transition(background 300ms $ease-out, transform 3000ms $special_easing, filter 600ms $ease-out);
-	@include transform(translateX(0), translateY(0));
-	position: relative;
-	z-index: 5;
-}
-
 article {
 	pointer-events: none;
 }
@@ -155,25 +147,77 @@ body.loaded article {
 	pointer-events: auto;
 }
 
-article a:hover .media,
-article:hover .media,
-article a:active .media,
-article a:focus .media,
-body.touch section:hover .media {
-	@include transition(background 300ms $ease-out, transform 1500ms $special_easing);
-}
-
-article .media  img.loaded {
+article .media-wrapper {
+	width: 100%;
+	height: auto;
 	@include opacity(1);
-	@include transition(opacity 3000ms $special_easing);
+	@include filter(blur(0));
+	@include transition(
+		opacity 1500ms $ease-out,
+		transform 1500ms $special_easing,
+		filter 600ms $ease-out
+	);
+	@include transform(translateX(0), translateY(0));
+	position: relative;
+	z-index: 5;
+	float: left;
+	overflow: hidden;
 }
 
-article a:hover .media  img.loaded,
-article:hover .media  img.loaded,
-article a:active .media  img.loaded,
-article a:focus .media  img.loaded,
-body.touch section:hover .media img.loaded {
+article a:hover .media-wrapper,
+article:hover .media-wrapper,
+article a:active .media-wrapper,
+article a:focus .media-wrapper,
+body.touch section:hover .media-wrapper {
 	@include opacity(0.7);
+
+	@include transition(
+		opacity 1500ms $ease-out,
+		transform 1500ms $special_easing,
+		filter 1000ms $ease-out
+	);
+}
+
+
+article .media {
+	@include opacity(0);
+	@include transition(
+		opacity 0s linear,
+		transform 0s linear,
+		background 1500ms $ease-out
+	);
+	
+	@include transform(translateX(1em) translateY(0));
+	position: absolute;
+	z-index: 4;
+}
+article .media.current {
+	@include opacity(1);
+	@include transition(
+		opacity 500ms $ease-out,
+		transform 3000ms $special_easing,
+		background 1500ms $ease-out
+	);
+	
+	@include transform(translateX(0) translateY(0));
+	position: relative;
+	z-index: 5;
+}
+article .media.fadeout {
+	@include opacity(0);
+	@include transition(
+		background 1500ms $ease-out,
+		opacity 1500ms $ease-out
+
+	);
+	
+	@include transform(translateX(0) translateY(0));
+}
+
+
+
+article  img.loaded {
+	@include opacity(1);
 	@include transition(opacity 1500ms $special_easing);
 }
 

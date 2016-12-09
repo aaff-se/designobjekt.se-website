@@ -13,6 +13,8 @@ var aaffAddScrollClasses = function aaffAddScrollClasses(){
 	
 	var $articles = $('article');
 	var $loader = $('#loader');
+	var $outside;
+	var $inside;
 	var init = function init(){
 		
 		$articles = $('article');
@@ -24,9 +26,9 @@ var aaffAddScrollClasses = function aaffAddScrollClasses(){
 		
 		if(!$articles.length) return;
 		
-		$articles.filter(':above-the-top').addClass('above').removeClass('below');
-		$articles.filter(':in-viewport').removeClass('above below');
-		$articles.filter(':below-the-fold').addClass('below').removeClass('above');
+		$outside = $articles.filter(':above-the-top').addClass('above').removeClass('below');
+		$inside = $articles.filter(':in-viewport').removeClass('above below');
+		$outside += $articles.filter(':below-the-fold').addClass('below').removeClass('above');
 		
 		if($loader.length) {
 			var visibleloader = $loader.filter(':in-viewport');
@@ -38,6 +40,9 @@ var aaffAddScrollClasses = function aaffAddScrollClasses(){
 
 			}
 		}
+		
+		aaffAutoCarousel.stop($articles.filter(':above-the-top, :below-the-fold'));
+		aaffAutoCarousel.start($articles.filter(':in-viewport'));
 		
 	};
 	

@@ -72,7 +72,7 @@ footer .info {
 	font-size: 1.75em;
 	line-height: 1.125em;
 	width: col-width-percent(15,16);
-	margin: 0.5em 0 0 col-width-percent(1,32);
+	margin: 1em 0 0 col-width-percent(1,32);
 	@include opacity(0);
 	//@include transform(translateX(-0.8125vw));
 	@include filter(blur($blur_value));
@@ -161,21 +161,16 @@ footer .social a:hover {
 	@include transition( opacity 400ms $ease-out);
 }
 
-body.menu .media {
+body.menu .media-wrapper {
 	@include filter(blur($blur_value));
 	@include opacity(0.5);
+	@include transition(opacity 600ms $ease-out, filter 600ms $ease-out, transform 1500ms $special_easing);
 }
 
-body.menu article.above .media,
-body.menu article.below .media {
+body.menu article.above .media-wrapper,
+body.menu article.below .media-wrapper {
 	@include filter(blur(0));
 	@include opacity(1);
-}
-
-.media {
-	@include filter(blur(0));
-	@include opacity(1);
-	@include transition(opacity 600ms $ease-out, filter 600ms $ease-out);
 }
 
 #loader {
