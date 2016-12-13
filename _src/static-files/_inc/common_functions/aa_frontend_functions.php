@@ -177,8 +177,8 @@ function aa_get_header_metadata(){
 		$image_small = wp_get_attachment_image_src($image_id, 'og'); 
 		$image_large = wp_get_attachment_image_src($image_id, 'xl@2x');
 	} else {
-		$image_small[0] = _TEMPLATE_DIR_URI.'/_static/imgs/ogimage.jpg';
-		$image_large[0] = _TEMPLATE_DIR_URI.'/_static/imgs/ogimage.jpg';
+		$image_small[0] = _TEMPLATE_DIR_URI.'/_static/imgs/ogimage.png';
+		$image_large[0] = _TEMPLATE_DIR_URI.'/_static/imgs/ogimage.png';
 	}
 	$description = false;
 	if($post && !is_archive() && $seo) $description = $seo['desc'];

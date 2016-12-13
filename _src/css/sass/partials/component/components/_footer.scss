@@ -161,7 +161,8 @@ footer .social a:hover {
 	@include transition( opacity 400ms $ease-out);
 }
 
-body.menu .media-wrapper {
+body.menu article .media-wrapper {
+	overflow: visible;
 	@include filter(blur($blur_value));
 	@include opacity(0.5);
 	@include transition(opacity 600ms $ease-out, filter 600ms $ease-out, transform 1500ms $special_easing);
@@ -171,6 +172,7 @@ body.menu article.above .media-wrapper,
 body.menu article.below .media-wrapper {
 	@include filter(blur(0));
 	@include opacity(1);
+	
 }
 
 #loader {

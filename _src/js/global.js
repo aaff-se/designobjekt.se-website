@@ -46,7 +46,7 @@ var aaffInitReady = function aaffInitReady() {
 	aaSvgs.init();
 	aaIrLoadMoreArticles.init();
 	aaffEE.init();
-	
+	aaffTouchClicks.init();
 	//END add all functions here:
 
 };

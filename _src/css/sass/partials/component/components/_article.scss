@@ -287,12 +287,12 @@ article.large.right .text {
 article.center .text {
 //	@include transform( translateY(-50%) translateX(-0.5vw));
 	@include transform( translateY(-50%));
-	left: col-width-percent(4,10);
+	left: col-width-percent(5,10);
 	width: col-width-percent(7,10);
 	
 	@media all and (min-width: $small){
-		left: col-width-percent(5,6);
-		width: col-width-percent(5,6);
+		left: col-width-percent(5,7);
+		width: col-width-percent(5,7);
 	}
 }
 
@@ -301,7 +301,7 @@ article.center .text.left {
 	@include transform( translateY(-50%) );
 	left: auto;
 	text-align: right;
-	right: col-width-percent(4,10);
+	right: col-width-percent(5,10);
 	
 	@media all and (min-width: $small){
 		right: col-width-percent(5,6);

@@ -150,6 +150,7 @@ var aaIrLoadMoreArticles = function aaIrLoadMoreArticles(){
 					aaUnveil();
 					aaffAddScrollClasses.init();
 					aaffOnHover.init();
+					aaffTouchClicks.init();
 				} else {
 					$loaderLink.off('click',loaderClick);
 					$loaderLink.on('click',scrollTopClick);
