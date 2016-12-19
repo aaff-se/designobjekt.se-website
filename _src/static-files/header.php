@@ -17,7 +17,7 @@ DesignObjekt is a project by Anton Andersson Form & Funktioner and 1910 Design &
 		
 		<title><?php echo _SITE_NAME; ?></title>
 
-		<link rel="stylesheet" href="<?php echo _TEMPLATE_DIR_URI; ?>/_static/css/screen-min.css?2" type="text/css" media="all">
+		<link rel="stylesheet" href="<?php echo _TEMPLATE_DIR_URI; ?>/_static/css/screen-min.css?3" type="text/css" media="all">
 		
 		<link href="<?php echo _TEMPLATE_DIR_URI ?>/_static/imgs/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 		

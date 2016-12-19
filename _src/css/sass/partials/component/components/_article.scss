@@ -291,8 +291,8 @@ article.center .text {
 	width: col-width-percent(7,10);
 	
 	@media all and (min-width: $small){
-		left: col-width-percent(5,7);
-		width: col-width-percent(5,7);
+		left: col-width-percent(5,6);
+		width: col-width-percent(5,6);
 	}
 }
 
